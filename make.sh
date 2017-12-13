@@ -2,7 +2,7 @@
 
 function build {
     docker run -i -v $(pwd):/app microsoft/aspnetcore-build:2.0 \
-        dotnet build /app/aspnetapp.csproj
+        ls /app;dotnet build /app/aspnetapp.csproj
 }
 
 function unit {
