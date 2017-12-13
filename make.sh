@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function build {
     docker run -it -v $(pwd):/app microsoft/aspnetcore-build:2.0 \
         dotnet build /app/aspnetapp.csproj
