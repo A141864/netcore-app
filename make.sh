@@ -1,17 +1,15 @@
 #!/bin/bash
 
 function build {
-    docker run -i -v $(pwd):/app microsoft/aspnetcore-build:2.0 dotnet build /app/aspnetapp.csproj
+    dotnet build aspnetapp.csproj
 }
 
 function unit {
- docker run -i -v $(pwd):/app microsoft/aspnetcore-build:2.0 \
-    dotnet test /app/aspnetapp.csproj   
+    dotnet test aspnetapp.csproj   
 }
 
 function bundle {
- docker run -i -v $(pwd):/app microsoft/aspnetcore-build:2.0 \
-    dotnet pack --output /app/nupkgs /app/aspnetapp.csproj
+    dotnet pack --output nupkgs aspnetapp.csproj
 }
 
 function deploy {
