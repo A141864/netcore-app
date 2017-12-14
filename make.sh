@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function build {
+    dotnet restore
     dotnet build aspnetapp.csproj
 }
 
